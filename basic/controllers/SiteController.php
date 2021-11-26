@@ -65,6 +65,16 @@ class SiteController extends Controller
     }
 
     /**
+     * Displays homepage.
+     *
+     * @return string
+     */
+    public function actionSay($target = 'World')
+    {
+        return $this->render('say', ['target' => $target]);
+    }
+
+    /**
      * Login action.
      *
      * @return Response|string
