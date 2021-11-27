@@ -10,6 +10,8 @@ use yii\bootstrap4\Html;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
 
+$this->context->layout = false; //不使用布局
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -23,7 +25,38 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body class="d-flex flex-column h-100">
+<html lang="en">
+<head>
+<title>Logistics &mdash; Colorlib Website Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/css/magnific-popup.css">
+<link rel="stylesheet" href="/static/css/jquery-ui.css">
+<link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/static/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="/static/css/flaticon.css">
+<link rel="stylesheet" href="/static/css/aos.css">
+<link rel="stylesheet" href="/static/css/style1.css">
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="/static/js/jquery-ui.js"></script>
+<script src="/static/js/jquery.easing.1.3.js"></script>
+<script src="/static/js/popper.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/jquery.stellar.min.js"></script>
+<script src="/static/js/jquery.countdown.min.js"></script>
+<script src="/static/js/jquery.magnific-popup.min.js"></script>
+<script src="/static/js/bootstrap-datepicker.min.js"></script>
+<script src="/static/js/aos.js"></script>
+<script src="/static/js/main.js"></script>
+</body>
+</html>
 <?php $this->beginBody() ?>
+
 
 <header>
     <?php

@@ -10,6 +10,8 @@ use yii\bootstrap4\Html;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
 
+$this->context->layout = false; //不使用布局
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -17,7 +19,7 @@ AppAsset::register($this);
 <html lang="<?= Yii::$app->language ?>" class="h-100">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -87,7 +89,7 @@ AppAsset::register($this);
 			<li><a href="#section-services" class="nav-link">Services</a></li>
 			<li><a href="#section-industries" class="nav-link">Industries</a></li>
 			<li><a href="#section-blog" class="nav-link">Blog</a></li>
-			<li><a href="#section-contact" class="nav-link">Contact</a></li>
+			<li><a href="/site/login" class="nav-link">登陆/注册</a></li>
 		  </ul>
 		</nav>
 	  </div>
@@ -523,7 +525,7 @@ AppAsset::register($this);
   <div class="container">
 	<div class="row justify-content-center mb-5">
 	  <div class="col-md-7 text-center border-primary">
-		<h2 class="font-weight-light text-primary">Contact Us</h2>
+		<h2 class="font-weight-light text-primary">登陆/注册</h2>
 		<p class="color-black-opacity-5">See Our Daily News &amp; Updates</p>
 	  </div>
 	</div>
@@ -582,13 +584,13 @@ AppAsset::register($this);
 		
 		<div class="p-4 mb-3 bg-white">
 		  <p class="mb-0 font-weight-bold">Address</p>
-		  <p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
+		  <p class="mb-4">计算机学院, 海河教育园区南开大学, 津南区, 天津</p>
 
 		  <p class="mb-0 font-weight-bold">Phone</p>
-		  <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
+		  <p class="mb-4"><a href="#">+86 18713012939</a></p>
 
 		  <p class="mb-0 font-weight-bold">Email Address</p>
-		  <p class="mb-0"><a href="#">youremail@domain.com</a></p>
+		  <p class="mb-0"><a href="#">1119886232@qq.com</a></p>
 
 		</div>
 		
@@ -611,7 +613,7 @@ AppAsset::register($this);
 		<div class="row">
 		  <div class="col-md-5 mr-auto">
 			<h2 class="footer-heading mb-4">冬奥会简介</h2>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam iure deserunt ut architecto dolores quo beatae laborum aliquam ipsam rem impedit obcaecati ea consequatur.</p>
+			<p>冬季奥林匹克运动会（Olympic Winter Games），简称为冬季奥运会、冬奥会。主要由全世界地区举行，是世界规模最大的冬季综合性运动会，每四年举办一届，1994年起与夏季奥林匹克运动会相间举行。参与国主要分布在世界各地，包括欧洲、非洲、美洲、亚洲、大洋洲。由国际奥林匹克委员会(International Olympic Committee)主办。按实际举行次数计算届数。</p>
 		  </div>
 		  
 		  <div class="col-md-3">
@@ -620,7 +622,7 @@ AppAsset::register($this);
 			  <li><a href="#">冬奥会简介</a></li>
 			  <li><a href="#">Services</a></li>
 			  <li><a href="#">用户留言</a></li>
-			  <li><a href="#">Contact Us</a></li>
+			  <li><a href="#">登陆/注册</a></li>
 			</ul>
 		  </div>
 		  <div class="col-md-3">
