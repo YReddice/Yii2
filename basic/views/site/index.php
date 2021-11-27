@@ -9,6 +9,7 @@ use yii\bootstrap4\Breadcrumbs;
 use yii\bootstrap4\Html;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
+use yii\grid\GridView;
 
 $this->context->layout = false; //不使用布局
 
@@ -26,6 +27,11 @@ AppAsset::register($this);
 </head>
 <body class="d-flex flex-column h-100">
 <?php $this->beginBody() ?>
+
+
+<header>
+    
+</header>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -76,20 +82,43 @@ AppAsset::register($this);
 	  </div>
 	  <div class="col-12 col-md-10 d-none d-xl-block">
 		<nav class="site-navigation position-relative text-right" role="navigation">
-
 		  <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-			<li><a href="#section-主页" class="nav-link">主页</a></li>
-			<li class="has-children">
-			  <a href="#section-about" class="nav-link">冬奥会简介</a>
-			  <ul class="dropdown">
-				<li><a href="#section-how-it-works" class="nav-link">How It Works</a></li>
-				<li><a href="#section-our-team" class="nav-link">Our Team</a></li>
-			  </ul>
-			</li>
-			<li><a href="#section-services" class="nav-link">Services</a></li>
-			<li><a href="#section-industries" class="nav-link">Industries</a></li>
-			<li><a href="#section-blog" class="nav-link">Blog</a></li>
-			<li><a href="/site/login" class="nav-link">登陆/注册</a></li>
+		  <?php
+			NavBar::begin([
+				'brandLabel' => Yii::$app->name,
+				'brandUrl' => Yii::$app->homeUrl,
+				'options' => [
+					'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
+				],
+			]);
+			echo Nav::widget([
+				'options' => ['class' => 'navbar-nav'],
+				'items' => [
+					['label' => '主页', 'url' => ['#section-主页']],
+					['label' => '冬奥会简介', 'url' => ['#section-about']],
+					['label' => 'Services', 'url' => ['#section-services']],
+					['label' => '体育项目', 'url' => ['#section-industries']],
+					['label' => 'Blog', 'url' => ['#section-industries']],
+					['label' => 'About', 'url' => ['#section-blog']],
+					['label' => 'Contact', 'url' => ['/site/contact']],
+					Yii::$app->user->isGuest ? (
+						['label' => '登陆/注册', 'url' => ['/site/login']]
+					) : (
+						'<li>'
+						. Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])
+						. Html::submitButton(
+							'Logout (' . Yii::$app->user->identity->username . ')',
+							['class' => 'btn btn-link logout']
+						)
+						. Html::endForm()
+						. '</li>'
+					)
+				],
+			]);
+			NavBar::end();
+			?>
+			NavBar::end();
+    		?>
 		  </ul>
 		</nav>
 	  </div>
@@ -152,7 +181,7 @@ AppAsset::register($this);
   <div class="container">
 	<div class="row justify-content-center mb-5">
 	  <div class="col-md-7 text-center border-primary">
-		<h2 class="font-weight-light text-primary" data-aos="fade">How It Works</h2>
+		<h2 class="font-weight-light text-primary" data-aos="fade">历史记录</h2>
 	  </div>
 	</div>
 	<div class="row">
@@ -346,54 +375,54 @@ AppAsset::register($this);
   <div class="container">
 	<div class="row justify-content-center mb-5">
 	  <div class="col-md-7 text-center border-primary">
-		<h2 class="mb-0 text-primary">Industries</h2>
-		<p class="color-black-opacity-5">Lorem ipsum dolor sit amet.</p>
+		<h2 class="mb-0 text-primary">体育项目</h2>
+		<p class="color-black-opacity-5">常见的冬奥项目</p>
 	  </div>
 	</div>
   </div>
 
   <div class="owl-carousel nonloop-block-13">
 	<div>
-	  <a href="#" class="unit-1 text-center">
+	  <a class="unit-1 text-center">
 		<img src="/static/picture/img_1.jpg" alt="Image" class="img-fluid">
 		<div class="unit-1-text">
-		  <h3 class="unit-1-heading">Storage</h3>
+		  <h3 class="unit-1-heading">冰壶</h3>
 		</div>
 	  </a>
 	</div>
 
 	<div>
-	  <a href="#" class="unit-1 text-center">
+	  <a class="unit-1 text-center">
 		<img src="/static/picture/img_2.jpg" alt="Image" class="img-fluid">
 		<div class="unit-1-text">
-		  <h3 class="unit-1-heading">Air Transports</h3>
+		  <h3 class="unit-1-heading">短道速滑</h3>
 		</div>
 	  </a>
 	</div>
 
 	<div>
-	  <a href="#" class="unit-1 text-center">
+	  <a class="unit-1 text-center">
 		<img src="/static/picture/img_3.jpg" alt="Image" class="img-fluid">
 		<div class="unit-1-text">
-		  <h3 class="unit-1-heading">Cargo Transports</h3>
+		  <h3 class="unit-1-heading">北京冬奥会旗帜</h3>
 		</div>
 	  </a>
 	</div>
 
 	<div>
-	  <a href="#" class="unit-1 text-center">
+	  <a class="unit-1 text-center">
 		<img src="/static/picture/img_4.jpg" alt="Image" class="img-fluid">
 		<div class="unit-1-text">
-		  <h3 class="unit-1-heading">Cargo Ship</h3>
+		  <h3 class="unit-1-heading">滑冰</h3>
 		</div>
 	  </a>
 	</div>
 
 	<div>
-	  <a href="#" class="unit-1 text-center">
+	  <a class="unit-1 text-center">
 		<img src="/static/picture/img_5.jpg" alt="Image" class="img-fluid">
 		<div class="unit-1-text">
-		  <h3 class="unit-1-heading">Ware Housing</h3>
+		  <h3 class="unit-1-heading">冰球</h3>
 		</div>
 	  </a>
 	</div>
