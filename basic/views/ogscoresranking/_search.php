@@ -17,13 +17,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'rID') ?>
 
-    <?= $form->field($model, 'goldRank') ?>
-
-    <?= $form->field($model, 'medalsRank') ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
+        <?= Html::submitButton('查询', ['class' => 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

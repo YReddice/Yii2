@@ -40,9 +40,9 @@ class OgScoresranking extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'rID' => 'R ID',
-            'goldRank' => 'Gold Rank',
-            'medalsRank' => 'Medals Rank',
+            'rID' => '届数',
+            'goldRank' => '金牌榜',
+            'medalsRank' => '奖牌榜',
         ];
     }
 
